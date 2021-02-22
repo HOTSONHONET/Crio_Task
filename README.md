@@ -9,7 +9,7 @@
 <h1>Frontend</h1>
 <ul>
 
-<li>It contains a the following folders :</li>
+<li>It contains the following folders and files:</li>
 
 </ul>
 <ol>
@@ -37,8 +37,8 @@
 
 <h1>Links </h1>
 <ul>
-<li> Website : <a href="https://xmemers.herokuapp.com" target="_blank">Click here</a></li>
-<li> API : <a href="https://xmemefetcher.herokuapp.com/memes" target="_blank"> Click here</li>
+<li> Website : <button href="https://xmemers.herokuapp.com" target="_blank">Click here</button></li>
+  <li> API : <button href="https://xmemefetcher.herokuapp.com/memes" target="_blank"> Click here</button></li>
 </ul>
 
 
