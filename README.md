@@ -35,7 +35,7 @@
 <li> It also contains a requriements.txt file that has listed all the python packages which are requied for running the app</li>
 </ul>
 
-<h1>Link </h1>
+<h1>Links </h1>
 <ul>
 <li> Website : <a href="https://xmemers.herokuapp.com">Click here</a></li>
 <li> API : <a href="https://xmemefetcher.herokuapp.com/memes"> Click here</li>
