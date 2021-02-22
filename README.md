@@ -24,7 +24,7 @@
 <ul>
 <li>It contains 3 script files for running the app in the Ubuntu server: </li>
 <ol>
-<li><h3>testing_server.sh</h3> which invokes three other .sh files for running the app</li>
+<li><h3>testing_server.sh</h3> which invokes three other shells files for running the app</li>
 <li><h3>install.sh</h3> which performs the installation of all the dependecies for the app</li>
 <li><h3>server_run.sh</h3> which runs the script files of backend and frontend to start the servers</li>
 <li><h3>sleep.sh</h3> which sets a sleep duration for the server so that they will get warmed up</li>
