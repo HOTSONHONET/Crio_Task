@@ -37,8 +37,8 @@
 
 <h1>Links </h1>
 <ul>
-<li> Website : <button href="https://xmemers.herokuapp.com" target="_blank">Click here</button></li>
-  <li> API : <button href="https://xmemefetcher.herokuapp.com/memes" target="_blank"> Click here</button></li>
+<li> Website : <a href="https://xmemers.herokuapp.com" target="_blank">Click here</a></li>
+  <li> API : <a href="https://xmemefetcher.herokuapp.com/memes" target="_blank"> Click here</a></li>
 </ul>
 
 
