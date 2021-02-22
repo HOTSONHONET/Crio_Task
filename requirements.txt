@@ -1,0 +1,11 @@
+gunicorn==20.0.4
+Flask==1.1.1
+Flask-SQLAlchemy==2.4.1
+json5==0.9.5
+jsonschema==3.2.0
+mysqlclient==2.0.1
+psycopg2==2.8.4
+SQLAlchemy==1.3.16
+sqlparse==0.3.0
+requests==2.22.0
+flask-swagger-ui==3.36.0

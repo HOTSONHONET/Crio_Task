@@ -1,0 +1,16 @@
+{
+    "params": {
+        "admin_name": "Crio",
+        "admin_caption": "Crio",
+        "session" :"2020-21",
+        "local_uri":"postgresql://postgres:postgres@localhost/xmemes",
+        "prod_uri":"",
+        "linkedin_url": "https://www.linkedin.com/in/rudra-prasad-dash-85491910b/",
+        "github_url": "https://github.com/HOTSONHONET?tab=repositories",
+        "logo_img": "../static/img/icon.png",
+        "postsPerPage":100,
+        "secret_key":"s1mpleKennyS"
+
+
+    }
+}

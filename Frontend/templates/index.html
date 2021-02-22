@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('../static/images/background.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>XMEME</h1>
+          <span class="subheading">Be The Meme King</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+
+<div class="container text-info text-center">
+  <h1>Posted Memes</h1>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      {% for post in posts %}
+      <div class="col">
+        <div class="card shadow-sm">
+
+          <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ post.url }}"
+            alt="{{ post.caption }}" name="link">
+          <div class="card-body">
+            <h5 class="card-text" name="name">{{ post.name }}</h5>
+            <p class="card-text" name="caption">{{ post.caption }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/editMeme/{{ post.id }}"><button type="button"
+                    class="btn btn-sm btn-outline-success">Edit</button></a>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"
+                  data-target="#viewModal_{{post.id}}_" >View</button>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="viewModal_{{post.id}}_" tabindex="-1" aria-labelledby="viewModal_{{post.id}}_Label"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="viewModal_{{post.id}}_Label">{{post.caption}}</h5>
+                      </div>
+                      <div class="modal-body container">
+                        <img src="{{post.url}}" class="img-fluid">
+                      </div>
+                      <div class="modal-footer">
+                        <div class="container text-center">
+                          <p class="text-muted" name="date">This was posted on {{ post.date.split()[0] }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <a href="/deleteMeme/{{ post.id }}"><button class="btn btn-sm btn-outline-danger"
+                    type="button">Delete</button></a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories = true) %}
+{% if messages %}
+{% for category, msg in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show text-center" role="alert">
+  <strong>{{msg}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+
+<!-- Pager -->
+<div class="container">
+  <div class="clearfix">
+    <a class="btn btn-dark float-left" href="{{ prev_ }}">&larr; Previous</a>
+    <a class="btn btn-dark float-right" href="{{ next_ }}">Next &rarr;</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

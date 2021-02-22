@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>XMEME</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static',filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static',filename = 'vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+    type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename = 'css/clean-blog.min.css') }}" rel="stylesheet">
+  <link rel="icon" href="../static/images/icon.png">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <!-- <link rel="stylesheet" href="../static/css/shareMeme.css"> -->
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/">XMEME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#myModal">Post Meme</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- To display the Modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="myModalLabel">SHARE MEME</h5>
+          <!-- <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <form action="/post-meme" method="POST" enctype="multipart/form-data">
+            <div class="container" id="formicon">
+              <img src="../static/images/icon.png" class="rounded-circle img-fluid"" alt=" icon">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label text-white">Name</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name"
+                name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label text-white">Caption</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter a caption"
+                name="caption" required>
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label text-white">URL</label>
+              <input type="url" class="form-control" id="formGroupExampleInput" placeholder="Enter a Valid URL"
+                name="url" required>
+            </div>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="shareMeme">Share</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+  {% block body %} {% endblock %}
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="{{ params['github_url'] }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/rudra-prasad-dash-85491910b/" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted"><strong>Copyright &copy; HH</strong></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename = 'vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename = 'js/clean-blog.min.js') }}"></script>
+  <script>
+    const shareMemeBtn = document.getElementById("#shareMeme");
+    shareMemeBtn.addEventListener('mousehover', (e) => {
+      e.preventDefault();
+      const logoimg = document.getElementById("#formicon");
+      logoimg.classList.add('hover');
+      setTimeout(function () {
+        logoimg.classList.remove('hover');
+      }, 1000);
+    });
+  </script>
+
+</body>
+
+</html>

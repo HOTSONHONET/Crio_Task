@@ -1,0 +1,64 @@
+{% extends "layout.html"%}
+{% block body %}
+
+<header class="masthead" style="background-image: url('../static/images/edit.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Edit your XMEME</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class = "container-fluid px-0 pb-0">
+<div class="album py-5 bg-dark">
+  <div class="container row text-white">
+    <div class="container text-center site-heading">
+      <h1>MEME posted by {{post.name}}</h1>
+      <span class="subheading">This was shared on {{post.date.split()[0]}}</span>
+    </div>
+
+    <div class="col-lg py-5">
+      <div class="control-group">
+        <form action="/editMeme/{{ post.id }}" enctype="multipart/form-data" method="POST">
+          <div class="form-group floating-labels-form-group controls">
+            <div class="container-fluid text-center site-heading text-primary">
+              <h3>You can Edit only URL and/or Caption</h3>
+            </div>
+            <div class="container mt-10 mb-10">
+              <label>Caption</label>
+              <textarea type='text' rows="6" class="form-control" placeholder="Caption" name="caption" id="content" >{{ post.caption}}</textarea>
+            </div>
+            <br>
+            <div class="container mb-10">
+              <label>URL</label>
+              <textarea type='text' rows="6" class="form-control" placeholder="url" name="url" id="content" >{{ post.url}}</textarea>
+            </div>
+            <br>
+            <div class="container mt-10 float-right">
+              <button class="btn btn-outline-success" type="submit" id="editMeme">Save Changes</button>
+            </div>       
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg py-5">
+      <img src="{{ post.url}}" class="container rounded"  alt="Image is taking time to Load">
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
